@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 @RestController
 public class UptimeApp {
 
-    private static long start = System.currentTimeMillis();
+    private static final long start = System.currentTimeMillis();
 
     @GetMapping("/up")
     public String uptimeApp() {
@@ -18,7 +18,7 @@ public class UptimeApp {
                 TimeUnit.MILLISECONDS.toHours(millis),
                 TimeUnit.MILLISECONDS.toMinutes(millis),
                 TimeUnit.MILLISECONDS.toSeconds(millis) -
-                        TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
-        return String.format("Uptime App: (up %s)", uptime);
+                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
+        return String.format("<h3>Uptime App: (up %s)</h3>", uptime);
     }
 }
