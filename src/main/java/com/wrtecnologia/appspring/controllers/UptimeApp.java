@@ -12,6 +12,7 @@ public class UptimeApp {
 
     @GetMapping("/up")
     public String uptimeApp() {
+
         long millis = System.currentTimeMillis() - start;
 
         String uptime = String.format("%02d:%02d:%02d:%02d",
