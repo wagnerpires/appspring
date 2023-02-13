@@ -1,8 +1,7 @@
 package com.wrtecnologia.appspring.controllers;
 
-import com.wrtecnologia.appspring.jobs.JobsDiversos;
+import com.wrtecnologia.appspring.jobs.DiversosJobs;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.support.CronSequenceGenerator;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +16,7 @@ public class UptimeApp {
     private static final long start = System.currentTimeMillis();
 
     @Autowired
-    JobsDiversos jobsDiversos;
+    DiversosJobs diversosJobsDiversos;
 
     @GetMapping("/up")
     public String uptimeApp() {
@@ -36,6 +35,6 @@ public class UptimeApp {
 
         return String.format("<h3>Uptime App: (up %s)</h3>", uptime) + "<h4>" +
                 "Data e hora atuais.: " + sdf.format(calendario.getTime()) + "<br>" +
-                "Próxima Execução: " + jobsDiversos.next() + "</h4>";
+                "Próxima Execução: " + diversosJobsDiversos.next() + "</h4>";
     }
 }

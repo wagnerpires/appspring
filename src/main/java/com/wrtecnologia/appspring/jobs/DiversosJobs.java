@@ -8,13 +8,12 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 @Component
 @Slf4j
-public class JobsDiversos {
+public class DiversosJobs {
 
-    public static final String CRON_EXPRESSION = "0 0/1 * * * ?";
+    public static final String CRON_EXPRESSION = "0 0/30 * * * ?";
     public DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE dd/MM/uuuu HH:mm:ss");
 
     @PostConstruct

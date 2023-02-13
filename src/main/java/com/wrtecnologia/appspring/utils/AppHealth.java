@@ -1,6 +1,6 @@
 package com.wrtecnologia.appspring.utils;
 
-import com.wrtecnologia.appspring.jobs.JobsDiversos;
+import com.wrtecnologia.appspring.jobs.DiversosJobs;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.health.Health;
@@ -18,7 +18,7 @@ public class AppHealth implements HealthIndicator {
     protected static final Map<String, Object> map = new HashMap<>();
 
     @Autowired
-    JobsDiversos jobsDiversos;
+    DiversosJobs diversosJobsDiversos;
 
     @Override
     public Health health(){
@@ -28,12 +28,12 @@ public class AppHealth implements HealthIndicator {
     @PostConstruct
     public void init() {
         map.put("AppStartIn: ", buscaDataHora());
-        map.put("NextExecutionJob: ", jobsDiversos.next());
+        map.put("NextExecutionJob: ", diversosJobsDiversos.next());
     }
 
     private String buscaDataHora() {
         LocalDateTime date = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/uuuu HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE dd/MM/uuuu HH:mm:ss");
         return date.format(formatter);
     }
 
