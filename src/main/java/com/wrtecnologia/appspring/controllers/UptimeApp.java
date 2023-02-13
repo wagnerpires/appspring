@@ -30,8 +30,6 @@ public class UptimeApp {
                 TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)),
                 TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
 
-        // return String.format("<h3>Uptime App: (up %s)</h3>", uptime);
-
         Calendar calendario = Calendar.getInstance();
         //calendario.add(Calendar.DATE, 4); // DATA PARA A PRÓXIMA SEXTA-FEIRA
         SimpleDateFormat sdf = new SimpleDateFormat("EEE dd/MM/uuuu HH:mm:ss");
