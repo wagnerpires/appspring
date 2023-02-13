@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 
 @Component
 @Slf4j
-public class DiversosJobs {
+public class DateTimeJobs {
 
     public static final String CRON_EXPRESSION = "0 0/30 * * * ?";
     public DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE dd/MM/uuuu HH:mm:ss");
