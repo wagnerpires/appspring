@@ -32,9 +32,13 @@ public class UptimeApp {
         Calendar calendario = Calendar.getInstance();
         //calendario.add(Calendar.DATE, 4); // DATA PARA A PRÓXIMA SEXTA-FEIRA
         SimpleDateFormat sdf = new SimpleDateFormat("EEE dd/MM/uuuu HH:mm:ss");
-
+/*
         return String.format("<h3>Tempo em execução (aplicação): up %s</h3>", uptime) + "<h4>" +
                 "Data e hora atuais: " + sdf.format(calendario.getTime()) + "<br>" +
+                "Próxima execução (job) em: " + diversosJobsDateTime.next() + "</h4>";
+ */
+        return String.format("<h3>Data e hora atuais: \" + sdf.format(calendario.getTime())</h3>" +
+                "<h4>Tempo em execução (aplicação): up %s", uptime) + "<br>" +
                 "Próxima execução (job) em: " + diversosJobsDateTime.next() + "</h4>";
     }
 }
