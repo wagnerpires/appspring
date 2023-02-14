@@ -28,7 +28,7 @@ public class AppHealth implements HealthIndicator {
 
     @PostConstruct
     public void init() {
-        map.put("AppStartIn: ", buscaDataHora());
+        map.put("StartedSpringApplicationIn: ", buscaDataHora());
     }
 
     public void run() {
