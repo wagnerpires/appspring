@@ -13,7 +13,7 @@ import java.time.format.DateTimeFormatter;
 @Slf4j
 public class DateTimeJobs {
 
-    public static final String CRON_EXPRESSION = "0 0/30 * * * ?";
+    public static final String CRON_EXPRESSION = "0 0/5 * * * ?";
     public DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE dd/MM/uuuu HH:mm:ss");
 
     @PostConstruct
@@ -26,8 +26,8 @@ public class DateTimeJobs {
     @Scheduled(cron = CRON_EXPRESSION)
     public void run() {
         LocalDateTime data = LocalDateTime.now();
-        log.info("Rodando schedule em: " + data.format(formatter));
-        log.info("Próxima execução em: " + next());
+        log.info("Rodando schedule em.......: " + data.format(formatter));
+        log.info("Próxima execução do Job em: " + next());
     }
 
     public String next() {

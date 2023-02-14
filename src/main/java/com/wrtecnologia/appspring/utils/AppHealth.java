@@ -18,17 +18,21 @@ public class AppHealth implements HealthIndicator {
     protected static final Map<String, Object> map = new HashMap<>();
 
     @Autowired
-    DateTimeJobs diversosJobsDateTime;
+    DateTimeJobs dateTimeJobs;
 
     @Override
     public Health health(){
+        map.put("NextExecutionJob: ", dateTimeJobs.next());
         return Health.up().withDetails(map).build();
     }
 
     @PostConstruct
     public void init() {
         map.put("AppStartIn: ", buscaDataHora());
-        map.put("NextExecutionJob: ", diversosJobsDateTime.next());
+    }
+
+    public void run() {
+        // map.put("NextExecutionJob: ", dateTimeJobs.next());
     }
 
     private String buscaDataHora() {

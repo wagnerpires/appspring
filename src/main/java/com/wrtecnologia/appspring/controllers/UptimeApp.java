@@ -34,7 +34,7 @@ public class UptimeApp {
         SimpleDateFormat sdf = new SimpleDateFormat("EEE dd/MM/uuuu HH:mm:ss");
 
         return String.format("<h3>Uptime App: (up %s)</h3>", uptime) + "<h4>" +
-                "Data e hora atuais.: " + sdf.format(calendario.getTime()) + "<br>" +
-                "Próxima Execução: " + diversosJobsDateTime.next() + "</h4>";
+                "Data e hora atuais: " + sdf.format(calendario.getTime()) + "<br>" +
+                "Próxima execução do Job em: " + diversosJobsDateTime.next() + "</h4>";
     }
 }
