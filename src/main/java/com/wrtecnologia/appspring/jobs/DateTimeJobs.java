@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 public class DateTimeJobs {
 
     public static final String CRON_EXPRESSION = "0 0/10 * * * ?";
-    public DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE dd/MM/uuuu HH:mm:ss");
+    public static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE dd/MM/uuuu HH:mm:ss");
 
     @PostConstruct
     public void init() {
