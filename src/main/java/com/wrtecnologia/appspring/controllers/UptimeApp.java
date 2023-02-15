@@ -27,13 +27,14 @@ public class UptimeApp {
 
         String uptime = String.format("%02d:%02d:%02d:%02d", TimeUnit.MILLISECONDS.toDays(millis), TimeUnit.MILLISECONDS.toHours(millis) - TimeUnit.DAYS.toHours(TimeUnit.MILLISECONDS.toDays(millis)), TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
 
+        // LocalDateTime date = LocalDateTime.now().plusDays(4); // ADD DAYS IN DATE
         LocalDateTime date = LocalDateTime.now();
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE dd/MM/uuuu HH:mm:ss");
 
         return String.format(
                 "<p><strong><font color=\"blue\" face=\"Verdana\" size=\"2\">Data e hora servidor...: </strong>" + date.format(formatter) + "</font></p>" +
                 "<p><strong><font color=\"black\" face=\"Verdana\" size=\"2\">Próxima execução job.: </strong>" + diversosJobsDateTime.next() + "</font>" +
                 "<strong><font color=\"black\" face=\"Verdana\" size=\"2\"><br>Uptime aplicação.........:</strong> %s", uptime) + "</font></p>";
-
     }
 }
