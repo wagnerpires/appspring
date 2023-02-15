@@ -17,6 +17,8 @@ public class AppHealth implements HealthIndicator {
 
     protected static final Map<String, Object> map = new HashMap<>();
 
+    public String startapp;
+
     @Autowired
     DateTimeJobs dateTimeJobs;
 
@@ -29,6 +31,7 @@ public class AppHealth implements HealthIndicator {
     @PostConstruct
     public void init() {
         map.put("StartedSpringApplicationIn: ", buscaDataHora());
+        startapp = buscaDataHora();
     }
 
     public void run() {

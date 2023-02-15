@@ -1,6 +1,7 @@
 package com.wrtecnologia.appspring.controllers;
 
 import com.wrtecnologia.appspring.jobs.DateTimeJobs;
+import com.wrtecnologia.appspring.utils.AppHealth;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +21,9 @@ public class UptimeApp {
     @Autowired
     DateTimeJobs diversosJobsDateTime;
 
+    @Autowired
+    AppHealth appHealth;
+
     @GetMapping("/up")
     public String uptimeApp() {
 
@@ -33,8 +37,9 @@ public class UptimeApp {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE dd/MM/uuuu HH:mm:ss");
 
         return String.format(
-                "<p><strong><font color=\"blue\" face=\"Verdana\" size=\"2\">Data e hora servidor...: </strong>" + date.format(formatter) + "</font></p>" +
-                "<p><strong><font color=\"black\" face=\"Verdana\" size=\"2\">Próxima execução job.: </strong>" + diversosJobsDateTime.next() + "</font>" +
-                "<strong><font color=\"black\" face=\"Verdana\" size=\"2\"><br>Uptime aplicação.........:</strong> %s", uptime) + "</font></p>";
+                "<p><strong><font color=\"blue\" face=\"Verdana\" size=\"2\">Data e hora servidor...: </strong>" + date.format(formatter) + "</font>" +
+                "<strong><font color=\"black\" face=\"Verdana\" size=\"2\"><br>Start aplicação............: </strong>" + appHealth.startapp + "</font>" +
+                "<strong><font color=\"black\" face=\"Verdana\" size=\"2\"><br>Uptime aplicação.........:</strong> %s", uptime) + "</font><br>" +
+                "<strong><font color=\"black\" face=\"Verdana\" size=\"2\">Próxima execução job.: </strong>" + diversosJobsDateTime.next() + "</font></p>";
     }
 }
