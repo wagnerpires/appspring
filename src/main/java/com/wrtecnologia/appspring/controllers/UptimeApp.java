@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
@@ -28,17 +30,17 @@ public class UptimeApp {
                 TimeUnit.MILLISECONDS.toHours(millis) - TimeUnit.DAYS.toHours(TimeUnit.MILLISECONDS.toDays(millis)),
                 TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)),
                 TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
-
+/*
         Calendar calendario = Calendar.getInstance();
         //calendario.add(Calendar.DATE, 4); // DATA PARA A PRÓXIMA SEXTA-FEIRA
         SimpleDateFormat sdf = new SimpleDateFormat("EEE dd/MM/uuuu HH:mm:ss");
-/*
-        return String.format("<h3>Tempo em execução (aplicação): up %s</h3>", uptime) + "<h4>" +
-                "Data e hora atuais: " + sdf.format(calendario.getTime()) + "<br>" +
-                "Próxima execução (job) em: " + diversosJobsDateTime.next() + "</h4>";
  */
-        return String.format("<h3>Data e hora atuais: \" + sdf.format(calendario.getTime())</h3>" +
-                "<h4>Tempo em execução (aplicação): up %s", uptime) + "<br>" +
-                "Próxima execução (job) em: " + diversosJobsDateTime.next() + "</h4>";
+
+        LocalDateTime date = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE dd/MM/uuuu HH:mm:ss");
+
+        return String.format("<h3>Data e hora: " + date.format(formatter) + "</h3>" +
+                "<h4>(aplicação) Uptime: %s", uptime) + "<br>" +
+                "(job) Próxima execução: " + diversosJobsDateTime.next() + "</h4>";
     }
 }

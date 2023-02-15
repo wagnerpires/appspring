@@ -13,7 +13,7 @@ import java.time.format.DateTimeFormatter;
 @Slf4j
 public class DateTimeJobs {
 
-    public static final String CRON_EXPRESSION = "0 0/10 * * * ?";
+    public static final String CRON_EXPRESSION = "0 0 * * * ?";
     public static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE dd/MM/uuuu HH:mm:ss");
 
     @PostConstruct
