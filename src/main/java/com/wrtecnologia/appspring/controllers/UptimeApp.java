@@ -30,9 +30,10 @@ public class UptimeApp {
         LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE dd/MM/uuuu HH:mm:ss");
 
-        return String.format("<p><strong><font color=\"blue\" face=\"Verdana\" size=\"2\">Data e hora servidor...: </strong>" +
-                date.format(formatter) + "</font></p>" + "<p><strong><font color=\"black\" face=\"Verdana\" size=\"2\">" +
-                "Uptime aplicação........:</strong> %s", uptime) + "<br><strong>Próxima execução job: </strong>" +
-                diversosJobsDateTime.next() + "</font></p>";
+        return String.format(
+                "<p><strong><font color=\"blue\" face=\"Verdana\" size=\"2\">Data e hora servidor...: </strong>" + date.format(formatter) + "</font></p>" +
+                "<p><strong><font color=\"black\" face=\"Verdana\" size=\"2\">Próxima execução job.: </strong>" + diversosJobsDateTime.next() + "</font>" +
+                "<strong><font color=\"black\" face=\"Verdana\" size=\"2\"><br>Uptime aplicação.........:</strong> %s", uptime) + "</font></p>";
+
     }
 }
