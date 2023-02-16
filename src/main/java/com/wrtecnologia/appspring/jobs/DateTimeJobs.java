@@ -26,8 +26,8 @@ public class DateTimeJobs {
     @Scheduled(cron = CRON_EXPRESSION)
     public void run() {
         LocalDateTime data = LocalDateTime.now();
-        log.info("Job executado...: " + data.format(formatter));
-        log.info("Próxima execução: " + next());
+        log.info("Job executed in...: " + data.format(formatter));
+        log.info("Next execution job: " + next());
     }
 
     public String next() {
