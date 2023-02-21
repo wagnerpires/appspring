@@ -12,7 +12,6 @@ import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 import java.text.SimpleDateFormat;
-
 @RestController
 public class UptimeApp {
 
