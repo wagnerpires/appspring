@@ -12,10 +12,10 @@ import java.util.TimeZone;
 @SpringBootApplication
 @EnableScheduling
 @Slf4j
-public class AppspringApplication {
+public class AppSpringApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AppspringApplication.class, args);
+        SpringApplication.run(AppSpringApplication.class, args);
     }
 
     @PostConstruct

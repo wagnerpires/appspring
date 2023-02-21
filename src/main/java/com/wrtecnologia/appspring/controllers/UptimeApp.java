@@ -40,7 +40,7 @@ public class UptimeApp {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE dd/MM/uuuu HH:mm:ss");
 
         return String.format(
-                "<p><strong><font color=\"#ff3399\" face=\"Courier\" size=\"3\">Railway App Server (AppSpringApplication)</strong></p>" +
+                "<p><strong><font color=\"green\" face=\"Courier\" size=\"3\">Railway App Server (production)</strong></p>" +
                 "<p><strong><font color=\"blue\" face=\"Courier\" size=\"2\">Server date/time..: </strong>" + date.format(formatter) + "</font>" +
                 "<br><strong><font color=\"black\" face=\"Courier\" size=\"2\">App started in....: </strong>" + appHealth.startapp + "</font>" +
                 "<br><strong><font color=\"black\" face=\"Courier\" size=\"2\">Next execution job: </strong>" + diversosJobsDateTime.next() + "</font>" +
