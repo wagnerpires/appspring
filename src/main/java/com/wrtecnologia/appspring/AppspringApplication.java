@@ -12,17 +12,18 @@ import java.util.TimeZone;
 @SpringBootApplication
 @EnableScheduling
 @Slf4j
-public class AppspringApplication {
+public class AppSpringApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AppspringApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AppSpringApplication.class, args);
+    }
 
-	@PostConstruct
-	public void init(){
-		// Setting Spring Boot SetTimeZone
-		// log.info(String.valueOf(ZoneId.systemDefault()));
-		TimeZone.setDefault(TimeZone.getTimeZone("America/Sao_Paulo"));
-		log.info(String.valueOf(ZoneId.systemDefault()));
+    @PostConstruct
+    public void init() {
+
+        // Setting Spring Boot SetTimeZone
+        log.info(String.valueOf(ZoneId.systemDefault()));
+        TimeZone.setDefault(TimeZone.getTimeZone("America/Sao_Paulo"));
+        log.info(String.valueOf(ZoneId.systemDefault()));
     }
 }

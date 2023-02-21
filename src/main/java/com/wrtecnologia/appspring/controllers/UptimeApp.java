@@ -29,7 +29,10 @@ public class UptimeApp {
 
         long millis = System.currentTimeMillis() - start;
 
-        String uptime = String.format("%02d:%02d:%02d:%02d", TimeUnit.MILLISECONDS.toDays(millis), TimeUnit.MILLISECONDS.toHours(millis) - TimeUnit.DAYS.toHours(TimeUnit.MILLISECONDS.toDays(millis)), TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
+        String uptime = String.format("%03d days %02d hours %02d minutes %02d seconds", TimeUnit.MILLISECONDS.toDays(millis),
+                                                             TimeUnit.MILLISECONDS.toHours(millis) - TimeUnit.DAYS.toHours(TimeUnit.MILLISECONDS.toDays(millis)),
+                                                             TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)),
+                                                             TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
 
         // LocalDateTime date = LocalDateTime.now().plusDays(4); // ADD DAYS IN DATE
         LocalDateTime date = LocalDateTime.now();
@@ -37,11 +40,11 @@ public class UptimeApp {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE dd/MM/uuuu HH:mm:ss");
 
         return String.format(
-                "<p><strong><font color=\"red\" face=\"Courier\" size=\"3\">Railway App Server (AppspringApplication)</strong></p>" +
+                "<p><strong><font color=\"#ff3399\" face=\"Courier\" size=\"3\">Railway App Server (AppSpringApplication)</strong></p>" +
                 "<p><strong><font color=\"blue\" face=\"Courier\" size=\"2\">Server date/time..: </strong>" + date.format(formatter) + "</font>" +
-                "<strong><font color=\"black\" face=\"Courier\" size=\"2\"><br>Start in..........: </strong>" + appHealth.startapp + "</font>" +
-                "<strong><font color=\"black\" face=\"Courier\" size=\"2\"><br>Uptime............:</strong> %s", uptime) + "</font><br>" +
-                "<strong><font color=\"black\" face=\"Courier\" size=\"2\">Next execution job: </strong>" + diversosJobsDateTime.next() + "</font></p>" +
-                "<p><strong><font color=\"black\" face=\"Courier\" size=\"2\">by Wagner Pires (dev)</font></strong></p>";
+                "<br><strong><font color=\"black\" face=\"Courier\" size=\"2\">App started in....: </strong>" + appHealth.startapp + "</font>" +
+                "<br><strong><font color=\"black\" face=\"Courier\" size=\"2\">Next execution job: </strong>" + diversosJobsDateTime.next() + "</font>" +
+                "<br><strong><font color=\"black\" face=\"Courier\" size=\"2\"><br>Uptime:</strong> %s", uptime) + "</font></p>" +
+                "<p><strong><font color=\"black\" face=\"Courier\" size=\"2\">by Wagner Pires (dev) - wagnerdba@gmail.com</font></strong></p>";
     }
 }
