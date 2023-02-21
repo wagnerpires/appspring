@@ -8,10 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
-import java.text.SimpleDateFormat;
 @RestController
 public class UptimeApp {
 
